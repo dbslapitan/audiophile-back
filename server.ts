@@ -8,7 +8,7 @@ if(result.error){
 }
 
 import * as express from "express";
-import { getEarphones, getHeadphones, getSpeakers } from "./controllers/product";
+import { getEarphones, getHeadphones, getProduct, getSpeakers } from "./controllers/product";
 
 const app = express();
 
@@ -26,6 +26,8 @@ app.get("/headphones", getHeadphones);
 app.get("/speakers", getSpeakers);
 
 app.get("/earphones", getEarphones);
+
+app.get("/product/:slug", getProduct);
 
 app.listen(PORT, () => {
     console.log(`server started at PORT ${PORT}...`);
