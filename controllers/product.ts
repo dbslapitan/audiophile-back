@@ -6,8 +6,8 @@ const DATA: Product[] = JSON.parse(fs.readFileSync("./data.json", "utf-8"));
 
 export const getHeadphones = (request: Request, response: Response) => {
     const headphones = DATA.filter(product => product.category === "headphones").map(product => {
-        const {id, slug, name, categoryImage, description, new: isNew} = (product as Product);
-        return {id, slug, name, categoryImage, description, isNew};
+        const {id, slug, name, categoryImage, description, new: isNew, category} = (product as Product);
+        return {id, slug, name, categoryImage, description, isNew, category};
     }).sort((a, b) => {
        return a.isNew ? -1 : b.isNew ? 1 : 0;
     });
@@ -16,8 +16,8 @@ export const getHeadphones = (request: Request, response: Response) => {
 
 export const getEarphones = (request: Request, response: Response) => {
     const headphones = DATA.filter(product => product.category === "earphones").map(product => {
-        const {id, slug, name, categoryImage, description, new: isNew} = (product as Product);
-        return {id, slug, name, categoryImage, description, isNew};
+        const {id, slug, name, categoryImage, description, new: isNew, category} = (product as Product);
+        return {id, slug, name, categoryImage, description, isNew, category};
     }).sort((a, b) => {
         return a.isNew ? -1 : b.isNew ? 1 : 0;
      });
@@ -26,8 +26,8 @@ export const getEarphones = (request: Request, response: Response) => {
 
 export const getSpeakers = (request: Request, response: Response) => {
     const headphones = DATA.filter(product => product.category === "speakers").map(product => {
-        const {id, slug, name, categoryImage, description, new: isNew} = (product as Product);
-        return {id, slug, name, categoryImage, description, isNew};
+        const {id, slug, name, categoryImage, description, new: isNew, category} = (product as Product);
+        return {id, slug, name, categoryImage, description, isNew, category};
     }).sort((a, b) => {
         return a.isNew ? -1 : b.isNew ? 1 : 0;
      });
