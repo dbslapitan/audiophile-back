@@ -37,8 +37,7 @@ export interface Product{
             "desktop": string
         }
     },
-    "others": 
-    {
+    "others": {
       "slug": string,
       "name": string,
       "image": {
